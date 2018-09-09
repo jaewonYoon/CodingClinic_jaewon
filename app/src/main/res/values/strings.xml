@@ -5,4 +5,7 @@
     <string name="splash_welcome">Welcome to My Instagram!</string>
     <string name="splash_happy">Happy to meet you</string>
     <string name="splash_start">Let\'s go!</string>
+
+    <!-- Main -->
+    <string name="main_welcome">This is MainActivity</string>
 </resources>
