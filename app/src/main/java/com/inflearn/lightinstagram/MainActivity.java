@@ -2,57 +2,31 @@ package com.inflearn.lightinstagram;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
+
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends BaseActivity {
 
     public static final String NAME_KEY = "NAME_KEY";
-    private TextView txtName;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_main);
-        findView();
         setArguments();
-    }
-
-    private void findView() {
-        txtName = findViewById(R.id.txt_name);
+        setFragment();
     }
 
     private void setArguments() {
-        txtName.setText(getIntent().getStringExtra(NAME_KEY));
+        name = getIntent().getStringExtra(NAME_KEY);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy");
+    private void setFragment() {
+        MainFragment fragment = MainFragment.newInstance(name);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.box_fragment, fragment);
+        transaction.commit();
     }
 }
