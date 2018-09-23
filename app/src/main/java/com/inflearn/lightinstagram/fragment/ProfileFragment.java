@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.inflearn.lightinstagram.BaseFragment;
 import com.inflearn.lightinstagram.R;
@@ -12,10 +11,11 @@ import com.inflearn.lightinstagram.activity.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 
 public class ProfileFragment extends BaseFragment {
 
-    private TextView txtName;
+    private String name;
 
     public static ProfileFragment newInstance(String name) {
         Bundle args = new Bundle();
@@ -31,22 +31,17 @@ public class ProfileFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        findView(view);
+        setArguments();
         return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        setArguments();
-    }
-
-    private void findView(View view) {
-        txtName = view.findViewById(R.id.txt_name);
-    }
-
     private void setArguments() {
-        String name = getArguments().getString(MainActivity.NAME_KEY);
-        txtName.setText(getString(R.string.profile_welcome) + ": " + name);
+        name = getArguments().getString(MainActivity.NAME_KEY);
+    }
+
+    @Override
+    protected void initializeToolbar(Toolbar toolbar) {
+        super.initializeToolbar(toolbar);
+        toolbar.setTitle(name);
     }
 }

@@ -10,6 +10,7 @@ import com.inflearn.lightinstagram.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 
 public class FeedFragment extends BaseFragment {
 
@@ -18,5 +19,11 @@ public class FeedFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.fragment_feed, container, false);
+    }
+
+    @Override
+    protected void initializeToolbar(Toolbar toolbar) {
+        super.initializeToolbar(toolbar);
+        toolbar.setTitle(R.string.feed_title);
     }
 }

@@ -7,9 +7,11 @@
     <string name="splash_start">Let\'s go!</string>
 
     <!-- Feed -->
+    <string name="feed_title">Feed</string>
     <string name="feed_welcome">This is Feed Fragment</string>
 
     <!-- Noti -->
+    <string name="noti_title">Noti</string>
     <string name="noti_welcome">This is Noti Fragment</string>
 
     <!-- Profile -->
