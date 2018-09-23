@@ -1,4 +1,4 @@
-package com.inflearn.lightinstagram.activity;
+package com.inflearn.lightinstagram.main;
 
 import android.content.Intent;
 import android.os.Bundle;

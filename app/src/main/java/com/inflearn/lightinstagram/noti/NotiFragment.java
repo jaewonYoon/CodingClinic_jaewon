@@ -1,4 +1,4 @@
-package com.inflearn.lightinstagram.fragment;
+package com.inflearn.lightinstagram.noti;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
