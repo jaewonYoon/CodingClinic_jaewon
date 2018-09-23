@@ -6,6 +6,17 @@
     <string name="splash_happy">Happy to meet you</string>
     <string name="splash_start">Let\'s go!</string>
 
-    <!-- Main -->
-    <string name="main_welcome">This is MainFragment</string>
+    <!-- Feed -->
+    <string name="feed_welcome">This is Feed Fragment</string>
+
+    <!-- Noti -->
+    <string name="noti_welcome">This is Noti Fragment</string>
+
+    <!-- Profile -->
+    <string name="profile_welcome">This is Profile Fragment</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_bottom_feed">Feed</string>
+    <string name="nav_bottom_noti">Noti</string>
+    <string name="nav_bottom_profile">Profile</string>
 </resources>
