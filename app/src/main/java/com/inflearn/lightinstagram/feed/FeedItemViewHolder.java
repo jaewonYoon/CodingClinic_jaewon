@@ -1,19 +1,20 @@
 package com.inflearn.lightinstagram.feed;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.inflearn.lightinstagram.BaseViewHolder;
 import com.inflearn.lightinstagram.R;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
-public class FeedItemViewHolder extends RecyclerView.ViewHolder {
+public class FeedItemViewHolder extends BaseViewHolder<Integer> {
 
     private ImageView imageView;
 
-    public FeedItemViewHolder(@NonNull View itemView) {
-        super(itemView);
+    public FeedItemViewHolder(@NonNull ViewGroup parent) {
+        super(getItemView(parent, R.layout.view_feed_item));
         findView(itemView);
     }
 
@@ -21,7 +22,8 @@ public class FeedItemViewHolder extends RecyclerView.ViewHolder {
         imageView = view.findViewById(R.id.img_feed);
     }
 
-    public void bind(int id) {
-        imageView.setImageResource(id);
+    @Override
+    public void bind(Integer item) {
+        imageView.setImageResource(item);
     }
 }

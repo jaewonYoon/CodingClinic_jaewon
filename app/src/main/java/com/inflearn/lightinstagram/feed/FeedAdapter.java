@@ -1,45 +1,16 @@
 package com.inflearn.lightinstagram.feed;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.inflearn.lightinstagram.R;
+import com.inflearn.lightinstagram.BaseRecyclerViewAdapter;
+import com.inflearn.lightinstagram.BaseViewHolder;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class FeedAdapter extends BaseRecyclerViewAdapter {
 
     private final String TAG = getClass().getSimpleName();
-    private List<Integer> imageIds = new ArrayList<>();
-
-    public void addAll(List<Integer> items) {
-        imageIds.addAll(items);
-        notifyDataSetChanged();
-    }
-
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d(TAG, "onCreateViewHolder");
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_feed_item, parent, false);
-        return new FeedItemViewHolder(itemView);
-    }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Log.d(TAG, "onBindViewHolder");
-        FeedItemViewHolder feedItemViewHolder = (FeedItemViewHolder) holder;
-        feedItemViewHolder.bind(imageIds.get(position));
-    }
-
-    @Override
-    public int getItemCount() {
-        return imageIds.size();
+    protected BaseViewHolder getViewHolder(int viewType, ViewGroup parent) {
+        return new FeedItemViewHolder(parent);
     }
 }
