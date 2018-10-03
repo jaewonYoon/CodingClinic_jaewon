@@ -1,4 +1,4 @@
-package com.inflearn.lightinstagram;
+package com.inflearn.lightinstagram.ui.base;
 
 import android.view.ViewGroup;
 

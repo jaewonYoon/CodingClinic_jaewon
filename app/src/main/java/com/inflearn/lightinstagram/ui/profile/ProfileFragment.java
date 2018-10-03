@@ -1,13 +1,13 @@
-package com.inflearn.lightinstagram.profile;
+package com.inflearn.lightinstagram.ui.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.inflearn.lightinstagram.BaseFragment;
+import com.inflearn.lightinstagram.ui.base.BaseFragment;
 import com.inflearn.lightinstagram.R;
-import com.inflearn.lightinstagram.main.MainActivity;
+import com.inflearn.lightinstagram.ui.main.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

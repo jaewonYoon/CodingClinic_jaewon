@@ -1,4 +1,4 @@
-package com.inflearn.lightinstagram.main;
+package com.inflearn.lightinstagram.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.inflearn.lightinstagram.R;
-import com.inflearn.lightinstagram.BaseActivity;
+import com.inflearn.lightinstagram.ui.base.BaseActivity;
 
 public class SplashActivity extends BaseActivity {
 

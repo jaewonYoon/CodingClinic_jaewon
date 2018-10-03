@@ -1,11 +1,11 @@
-package com.inflearn.lightinstagram.noti;
+package com.inflearn.lightinstagram.ui.noti;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.inflearn.lightinstagram.BaseFragment;
+import com.inflearn.lightinstagram.ui.base.BaseFragment;
 import com.inflearn.lightinstagram.R;
 
 import androidx.annotation.NonNull;

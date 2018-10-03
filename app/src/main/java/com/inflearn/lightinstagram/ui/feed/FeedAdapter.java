@@ -1,9 +1,9 @@
-package com.inflearn.lightinstagram.feed;
+package com.inflearn.lightinstagram.ui.feed;
 
 import android.view.ViewGroup;
 
-import com.inflearn.lightinstagram.BaseRecyclerViewAdapter;
-import com.inflearn.lightinstagram.BaseViewHolder;
+import com.inflearn.lightinstagram.ui.base.BaseRecyclerViewAdapter;
+import com.inflearn.lightinstagram.ui.base.BaseViewHolder;
 
 public class FeedAdapter extends BaseRecyclerViewAdapter {
 

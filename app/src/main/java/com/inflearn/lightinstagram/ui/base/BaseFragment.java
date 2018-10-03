@@ -1,8 +1,10 @@
-package com.inflearn.lightinstagram;
+package com.inflearn.lightinstagram.ui.base;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+
+import com.inflearn.lightinstagram.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

@@ -1,14 +1,14 @@
-package com.inflearn.lightinstagram.main;
+package com.inflearn.lightinstagram.ui.main;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.inflearn.lightinstagram.BaseActivity;
+import com.inflearn.lightinstagram.ui.base.BaseActivity;
 import com.inflearn.lightinstagram.R;
-import com.inflearn.lightinstagram.feed.FeedFragment;
-import com.inflearn.lightinstagram.noti.NotiFragment;
-import com.inflearn.lightinstagram.profile.ProfileFragment;
+import com.inflearn.lightinstagram.ui.feed.FeedFragment;
+import com.inflearn.lightinstagram.ui.noti.NotiFragment;
+import com.inflearn.lightinstagram.ui.profile.ProfileFragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
