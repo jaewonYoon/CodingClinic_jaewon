@@ -1,5 +1,6 @@
 package com.inflearn.lightinstagram.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -9,6 +10,7 @@ import com.inflearn.lightinstagram.ui.base.BaseActivity;
 import com.inflearn.lightinstagram.ui.feed.FeedFragment;
 import com.inflearn.lightinstagram.ui.noti.NotiFragment;
 import com.inflearn.lightinstagram.ui.profile.ProfileFragment;
+import com.inflearn.lightinstagram.ui.upload.UploadActivity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,11 +29,16 @@ public class MainActivity extends BaseActivity {
     private final FragmentManager fm = getSupportFragmentManager();
 
     private BottomNavigationView bottomNavigationView;
+    private int selectedItemId;
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         setArguments();
         initializeFragments();
@@ -66,15 +73,25 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
+                int id = menuItem.getItemId();
+                switch (id) {
                     case R.id.nav_bottom_feed:
-                        setFragment(feedFragment);
+                        setFragment(feedFragment, id);
+                        return true;
+                    case R.id.nav_bottom_upload:
+                        startActivity(new Intent(context, UploadActivity.class));
+                        bottomNavigationView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                bottomNavigationView.setSelectedItemId(selectedItemId);
+                            }
+                        });
                         return true;
                     case R.id.nav_bottom_noti:
-                        setFragment(notiFragment);
+                        setFragment(notiFragment, id);
                         return true;
                     case R.id.nav_bottom_profile:
-                        setFragment(profileFragment);
+                        setFragment(profileFragment, id);
                         return true;
                 }
                 return false;
@@ -82,7 +99,9 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    private void setFragment(Fragment fragment) {
+    private void setFragment(Fragment fragment, int id) {
+        selectedItemId = id;
+        if (fragment == activeFragment) return;
         FragmentTransaction transaction = fm.beginTransaction();
         if (activeFragment != null) transaction.hide(activeFragment);
         transaction.show(fragment)

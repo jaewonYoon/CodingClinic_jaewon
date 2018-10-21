@@ -10,6 +10,10 @@
     <string name="feed_title">Feed</string>
     <string name="feed_welcome">This is Feed Fragment</string>
 
+    <!-- Upload -->
+    <string name="upload_text_hint">문구 입력…</string>
+    <string name="upload_image_guide">이미지를 업로드 하려면 누르세요</string>
+
     <!-- Noti -->
     <string name="noti_title">Noti</string>
     <string name="noti_welcome">This is Noti Fragment</string>
@@ -21,4 +25,5 @@
     <string name="nav_bottom_feed">Feed</string>
     <string name="nav_bottom_noti">Noti</string>
     <string name="nav_bottom_profile">Profile</string>
+    <string name="nav_bottom_upload">Upload</string>
 </resources>

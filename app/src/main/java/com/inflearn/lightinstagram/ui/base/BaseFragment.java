@@ -11,12 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     protected final String TAG = getClass().getSimpleName();
     protected Context context;
     protected BaseActivity activity;
-
     private Toolbar toolbar;
 
     public Toolbar getToolbar() {
@@ -32,8 +31,8 @@ public class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initializeView(view);
-        initializeToolbar(toolbar);
+        toolbar = view.findViewById(R.id.toolbar);
+        if (toolbar != null) initializeToolbar(toolbar);
     }
 
     private void initialize() {
@@ -41,11 +40,12 @@ public class BaseFragment extends Fragment {
         activity = (BaseActivity) getActivity();
     }
 
-    private void initializeView(View view) {
-        toolbar = view.findViewById(R.id.toolbar);
-    }
-
     protected void initializeToolbar(Toolbar toolbar) {
-        // Do nothing
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.onBackPressed();
+            }
+        });
     }
 }

@@ -24,5 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.upload.UploadActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 </manifest>
