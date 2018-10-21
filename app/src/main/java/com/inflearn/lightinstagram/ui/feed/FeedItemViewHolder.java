@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.inflearn.lightinstagram.R;
 import com.inflearn.lightinstagram.data.entity.User;
 import com.inflearn.lightinstagram.ui.base.BaseViewHolder;
@@ -35,6 +36,10 @@ public class FeedItemViewHolder extends BaseViewHolder<User> implements View.OnC
         this.user = user;
         txtName.setText(user.getName());
         itemView.setOnClickListener(this);
+
+        Glide.with(context)
+                .load(user.getAvatarUrl())
+                .into(imgAvatar);
     }
 
     @Override

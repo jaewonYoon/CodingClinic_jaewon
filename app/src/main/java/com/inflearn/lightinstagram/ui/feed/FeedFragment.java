@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.inflearn.lightinstagram.R;
 import com.inflearn.lightinstagram.data.entity.User;
-import com.inflearn.lightinstagram.data.network.helper.GithubRemoteDataSource;
+import com.inflearn.lightinstagram.data.source.GithubRemoteSource;
 import com.inflearn.lightinstagram.ui.base.BaseFragment;
 import com.inflearn.lightinstagram.ui.view.LoadingBar;
 
@@ -28,7 +28,7 @@ public class FeedFragment extends BaseFragment {
     private LoadingBar loadingBar;
 
     private FeedAdapter adapter;
-    private GithubRemoteDataSource dataSource = new GithubRemoteDataSource();
+    private GithubRemoteSource dataSource = new GithubRemoteSource();
 
     @Nullable
     @Override

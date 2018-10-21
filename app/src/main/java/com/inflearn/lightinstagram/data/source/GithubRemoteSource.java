@@ -1,14 +1,14 @@
-package com.inflearn.lightinstagram.data.network.helper;
+package com.inflearn.lightinstagram.data.source;
 
 import com.inflearn.lightinstagram.data.entity.User;
 import com.inflearn.lightinstagram.data.network.RetrofitStore;
-import com.inflearn.lightinstagram.data.network.api.GithubService;
+import com.inflearn.lightinstagram.data.network.service.GithubService;
 
 import java.util.List;
 
 import retrofit2.Callback;
 
-public class GithubRemoteDataSource {
+public class GithubRemoteSource {
 
     private GithubService service = RetrofitStore.get().create(GithubService.class);
 
