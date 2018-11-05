@@ -34,7 +34,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, MainActivity.class)
-                        .putExtra(MainActivity.NAME_KEY, "maryang");
+                        .putExtra(MainActivity.NAME_KEY, "jaewon");
                 startActivity(intent);
                 finish();
             }

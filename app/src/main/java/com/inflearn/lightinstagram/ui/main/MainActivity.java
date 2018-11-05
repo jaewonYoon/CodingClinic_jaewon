@@ -3,7 +3,6 @@ package com.inflearn.lightinstagram.ui.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.inflearn.lightinstagram.R;
 import com.inflearn.lightinstagram.ui.base.BaseActivity;

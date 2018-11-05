@@ -35,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/add_image"
+                    android:drawableTop="@drawable/upload"
                     android:drawablePadding="@dimen/half_large"
                     android:text="@string/upload_image_guide"
                     android:textSize="@dimen/font_large" />
